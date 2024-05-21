@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bebas+Neue&family=Danfo&family=Faster+One&family=Federant&family=Hanalei+Fill&family=Jaro:opsz@6..72&family=Jersey+10&family=Jersey+20&family=Jersey+25+Charted&family=Jolly+Lodger&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kaushan+Script&family=Konkhmer+Sleokchher&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans+Khmer:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+Khmer:wght@100..900&family=Noto+Serif+TC:wght@200..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Rubik+Mono+One&family=Satisfy&family=Shadows+Into+Light&family=Teko:wght@300..700&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+    font-family: "Kanit", sans-serif;
+}
+.phone{
+    height: 850px;
+    width: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: transparent;  
+    position: relative;  
+}
+.displayBox{
+    height: 255px;
+    width: 372px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border-top: 1px solid #FC5A94;          
+    box-shadow: 0 4px 4px 2px rgb(0 0 0 / 25%) ;
+}
+.Screen{
+    position: absolute;
+    top: 37.5%;
+    right: 5%;
+}
+.fullScreen{
+    width: 25px;
+    height: 25px;
+}
+
+.container{
+    width: 372px;
+    height: 336px;
+    border-radius: 13px;
+    margin-top: 39px; 
+    border-bottom: 1px solid #FC5A94;
+    box-shadow: 0 0 3px 1px rgb(0 0 0 / 25%);
+    display: flex;
+    padding: 20px 0 0 15px;
+}
+
+#inputBox{
+    height: 298px;
+    width: 169px;
+    border-radius: 15px;
+    border: 1px solid #FD92B9;
+    padding: 10px 0 10px 13px;
+    box-shadow: 1px 3px 3px 1px rgb(0 0 0 / 25%);
+    display: flex;
+    align-items: flex-start;
+    font-family: 'kanit';
+}
+
+#inputBox::placeholder{
+    text-align: start;
+    font-family: 'kanit';
+    font-size: 16px;
+}
+
+.chooseFont{
+    margin-left: 16px;
+    font-size: 20px;
+    position: relative;
+    
+}
+
+.fontColorSize{
+    margin: 10px 0 30px 0;
+}
+
+#fontColor{
+    height: 29px;
+    width: 30px;
+    margin-left: 16px;
+    border: 1px solid #FFA5C5;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#fontSize{
+    height: 29px;
+    width: 60px;
+    margin-left: 16px;
+    padding-left: 5px;
+    border: 1px solid #FFA5C5;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#fontStyle{
+    height: 140px;
+    width: 133px;
+    border: 1px solid #FD92B9;
+    border-radius: 10px;
+    margin-top: 7px;
+    padding: 5px 0px 0 9px;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-y: scroll;
+    cursor: pointer;   
+}
+
+.buttons {
+    margin-top: 13px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    border-radius: 15px;
+    border-bottom: 1.5px solid #FC5A94;
+    box-shadow: 2px 4px 4px 1px rgb(0 0 0 / 25%);
+    height: 75px;
+    cursor: pointer;
+}
+
+.buttonLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonLogo img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.buttonLogo p {
+    margin: 0;
+    font-size: 12px;
+}

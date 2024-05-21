@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Text_Style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="phone">
+        <div id="output" class="displayBox"></div>
+
+        <div class="Screen">
+            <img class="fullScreen" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Full Screen - Color.png" alt="">
+        </div>
+
+        <div class="container">
+            <textarea type="text" id="inputBox" placeholder="Input your text..."></textarea>
+            
+            <div class="chooseFont">
+                <div class="fontColorSize">
+                    <label for="fontColor">Color</label>
+                    <input type="color" id="fontColor"></br>
+                </div>
+                <div class="fontColorSize">
+                    <label for="fontSize">Size</label>
+                    <input type="number" id="fontSize" min="10" max="150" value="28"></br>
+                </div>
+                <div>
+                    <label for="fontStyle">Font-Style</label>
+                    <div id="fontStyle">
+                        <div class="fontOption" style="font-family: 'Kaushan Script';" onclick="setFontStyle('Kaushan Script', this)">Kaushan Script</div>
+                        <div class="fontOption" style="font-family: 'Jolly Lodger', system-ui;" onclick="setFontStyle('Jolly Lodger', this)">Fredran</div>
+                        <div class="fontOption" style="font-family: 'Faster One', system-ui;" onclick="setFontStyle('Faster One', this)">Faster One</div>
+                        <div class="fontOption" style="font-family: 'Hanalei Fill', system-ui;" onclick="setFontStyle('Hanalei Fill', this)">Hanalei Fill</div>
+                        <div class="fontOption" style="font-family: 'Kanit';" onclick="setFontStyle('Kanit', this)">Kanit</div>
+                        <div class="fontOption" style="font-family: 'Danfo', serif;" onclick="setFontStyle('Danfo', this)">Danfo</div>
+                        <div class="fontOption" style="font-family: 'Noto Serif TC', serif;" onclick="setFontStyle('Noto Serif TC', this)">Noto Serif TC</div>
+                        <div class="fontOption" style="font-family: 'Noto Sans Khmer', serif;" onclick="setFontStyle('Noto Serif Khmer', this)">Noto Serif Khmer</div>
+                        <div class="fontOption" style="font-family: 'Konkhmer Sleokchher', system-ui;" onclick="setFontStyle('Konkhmer Sleokchher', this)">Konkhmer Sleokchher</div>
+                        <div class="fontOption" style="font-family: 'Arial', cursive;" onclick="setFontStyle('Arial', this)">Arial</div>
+                        <div class="fontOption" style="font-family: 'Jersey 10', sans-serif;" onclick="setFontStyle('Jersey 10', this)">Jersey 10</div>
+                        <div class="fontOption" style="font-family: 'Satisfy', cursive;" onclick="setFontStyle('Satisfy', this)">Satisfy</div>
+                        <div class="fontOption" style="font-family: 'Shadows Into Light', cursive;" onclick="setFontStyle('Shadows Into Light', this)">Shadows Into Light</div>
+                        <div class="fontOption" style="font-family: 'Teko', sans-serif;" onclick="setFontStyle('Teko', this)">Teko</div>
+                        <div class="fontOption" style="font-family: 'Jaro', sans-serif;" onclick="setFontStyle('Jaro', this)">Jaro</div>
+                        <div class="fontOption" style="font-family: 'Noto Sans SC', sans-serif;" onclick="setFontStyle('Noto Sans SC', this)">Noto Sans SC</div>
+                        <div class="fontOption" style="font-family: 'Bebas Neue', sans-serif;" onclick="setFontStyle('Bebas Neue', this)">Bebas Neue</div>
+                        <div class="fontOption" style="font-family: 'Jersey 25 Charted', sans-serif;" onclick="setFontStyle('Jersey 25 Charted', this)">Jersey 25 Charted</div>
+                        <div class="fontOption" style="font-family: 'Noto Sans TC', sans-serif;" onclick="setFontStyle('Noto Sans TC', this)">Noto Sans TC</div>
+                        <div class="fontOption" style="font-family: 'Noto Sans KR', sans-serif;" onclick="setFontStyle('Noto Sans KR', this)">Noto Sans KR</div>
+                        <div class="fontOption" style="font-family: 'Playfair Display', serif;" onclick="setFontStyle('Playfair Display', this)">Playfair Display</div>
+                        <div class="fontOption" style="font-family: 'Oswald', sans-serif;" onclick="setFontStyle('Oswald', this)">Oswald</div>
+                        <div class="fontOption" style="font-family: 'Poetsen One', sans-serif;" onclick="setFontStyle('Poetsen One', this)">Poetsen One</div>
+                        <div class="fontOption" style="font-family: 'Acme', sans-serif;" onclick="setFontStyle('Acme', this)">Acme</div>
+                        <div class="fontOption" style="font-family: 'Jersey 20', sans-serif;" onclick="setFontStyle('Jersey 20 Script', this)">Jersey 20 Script</div>
+                        <div class="fontOption" style="font-family: 'Rubik Mono One', monospace;" onclick="setFontStyle('Rubik Mono One', this)">Rubik</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="buttonLogo">
+                <img id="text" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Text - Black.png" alt="">
+                <p class="text">Text</p>
+            </div>
+            <div class="buttonLogo">
+                <img id="style" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Style - Black.png" alt="">
+                <p class="style">Style</p>
+            </div>
+            <div class="buttonLogo">
+                <img id="background" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Background - Black.png" alt="">
+                <p class="background">Background</p>
+            </div>
+            <div class="buttonLogo">
+                <img id="animation" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Animation - Black.png" alt="">
+                <p class="animation">Animation</p>
+            </div>
+        </div>
+    </div>
+    <script src="Text_Scrip.js"></script>
+</body>
+</html>
