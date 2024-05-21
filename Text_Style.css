@@ -108,6 +108,26 @@ body{
     cursor: pointer;   
 }
 
+#fontStyle::-webkit-scrollbar {
+    width: 8px;
+}
+  
+#fontStyle::-webkit-scrollbar-track {
+    box-shadow: inset 0 5px 10px #FFD3E3; 
+    border-radius: 10px;
+    margin:3px;
+}
+   
+#fontStyle::-webkit-scrollbar-thumb {
+    background: #FF93BA; 
+    border-radius: 10px;
+    margin: 2px;
+}
+  
+#fontStyle::-webkit-scrollbar-thumb:hover {
+    background: #FC5A94; 
+}
+
 .buttons {
     margin-top: 13px;
     display: flex;
