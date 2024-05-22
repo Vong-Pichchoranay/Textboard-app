@@ -25,7 +25,29 @@ body{
     border-radius: 15px;
     border-top: 1px solid #FC5A94;          
     box-shadow: 0 4px 4px 2px rgb(0 0 0 / 25%) ;
+    box-sizing: border-box;
+    padding: 15px;
+    overflow: auto;
+    white-space: normal;
+    word-wrap: break-word;
 }
+
+.displayBox::-webkit-scrollbar {
+    width: 9px;
+}
+
+.displayBox::-webkit-scrollbar-track {
+    box-shadow: inset 0 5px 10px #FFD3E3;
+    border-radius: 10px;
+    margin: 3px;
+}
+
+.displayBox::-webkit-scrollbar-thumb {
+    background: #FF93BA;
+    border-radius: 10px;
+    margin: 2px;
+}
+
 .Screen{
     position: absolute;
     top: 37.5%;
@@ -106,6 +128,12 @@ body{
     line-height: 1.7;
     overflow-y: scroll;
     cursor: pointer;   
+}
+
+.selected {
+    background-color: rgba(255, 165, 197, 0.4);
+    color: black;   
+    width: 120px;
 }
 
 #fontStyle::-webkit-scrollbar {

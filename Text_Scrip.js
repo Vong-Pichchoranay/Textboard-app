@@ -12,3 +12,13 @@ function updateText(){
     output.style.color = fontColor;
     output.textContent = inputBox;
 }
+
+function setFontStyle(fontFamily, element) {
+    const output = document.getElementById('output');
+    output.style.fontFamily = fontFamily;
+
+    const fontOptions = document.querySelectorAll('.fontOption');
+    fontOptions.forEach(option => option.classList.remove('selected'));
+
+    element.classList.add('selected');
+}
