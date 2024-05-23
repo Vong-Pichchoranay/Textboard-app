@@ -59,6 +59,36 @@ body{
     height: 25px;
 }
 
+.buttons {
+    margin-top: 13px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    border-radius: 15px;
+    border-bottom: 1.5px solid #FC5A94;
+    box-shadow: 2px 4px 4px 1px rgb(0 0 0 / 25%);
+    height: 75px;
+    cursor: pointer;
+}
+
+.buttonLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonLogo img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.buttonLogo p {
+    margin: 0;
+    font-size: 12px;
+}
+
 .container{
     width: 372px;
     height: 336px;
@@ -68,6 +98,12 @@ body{
     box-shadow: 0 0 3px 1px rgb(0 0 0 / 25%);
     display: flex;
     padding: 20px 0 0 15px;
+}
+
+
+/* Text_Button */
+#Text_Button{
+    display: flex;
 }
 
 #inputBox{
@@ -157,32 +193,8 @@ body{
     background: #FC5A94; 
 }
 
-.buttons {
-    margin-top: 13px;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    border-radius: 15px;
-    border-bottom: 1.5px solid #FC5A94;
-    box-shadow: 2px 4px 4px 1px rgb(0 0 0 / 25%);
-    height: 75px;
-    cursor: pointer;
-}
+/* Style Button */
 
-.buttonLogo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+/* Background Button */
 
-.buttonLogo img {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 5px;
-}
-
-.buttonLogo p {
-    margin: 0;
-    font-size: 12px;
-}
+/* Animation Button */
