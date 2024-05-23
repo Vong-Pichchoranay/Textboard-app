@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stlye.css">
+    <link rel="stylesheet" href="style_style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
     <title>Document</title>
 </head>
@@ -22,34 +22,36 @@
                 <button class="outline" id="outlineBtn" type="button">Outline</button>
             </div>
 
-            <div class="chooseFont" id="shadowContent"  >  
-                <label for="Color">Color</label>
-                <input type="color" class="color">
-                <br>
-                <label for="text">Size</label>
+            <div id="shadowContent"> 
+                <div> 
+                    <label for="Color">Color</label>
+                    <input type="color" class="color">
+                </div>
                 
-                <!-- <input type="text" class="size" name="color"> -->
-                <input type="number" class="size">
+                <div>
+                    <label for="text">Size</label>
+                    <input type="number" class="size">
+                </div>
                 
-                <br>
-                <label for="text">Shadow Direction</label> <br>
-                <label for="text">X</label>
-                <input type="number"class="x">
-                
-                
-                <label for="text">Y</label>
-                <input type="number" class="y">
-                
-               </label>
-                <br>
-                <label for="range">Opacity</label>
-                <input type="range"  id="range" name="range" required>
-                <!-- <div class="Opacity">Opacity</div> -->
-                
+                <div class="shadowDirection">
+                    <label for="text">Shadow Direction</label>
+                    <div>
+                        <label for="text">X</label>
+                        <input type="number"class="x">
+                        <label for="text">Y</label>
+                        <input type="number" class="y">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="range">Opacity</label>
+                    <input type="range"  id="range" name="range" required>
+                </div>
+                    
             </div>
             
 
-            <div class="chooseSize" id="outlineContent" hidden>  
+            <div id="outlineContent" hidden>  
                 <label for="Color">Color</label>
                 <input type="color" class="color">
                 <br>
@@ -58,7 +60,7 @@
                 <br>
                 <!-- <label for="text">Outline Direction</label> <br> -->
                 <label for="range">Opacity</label>
-                <input type="range" id="range" name="range" required
+                <input type="range" id="range" name="range" required>
 
                 </select>
             </div>

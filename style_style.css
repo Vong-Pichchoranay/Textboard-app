@@ -73,7 +73,7 @@ body{
     margin: 2px 10px;   
 }
 
-.chooseFont, .chooseSize{
+#shadowContent, #outlineContent{
     width: 343px;
     height: 245px;
     position: relative;
@@ -87,6 +87,10 @@ body{
     border-right: 1px solid #FC5A94; 
     
 }
+
+.shadowDirection{
+    margin-top: 15px;
+}
 .color, .size, .x, .y, label{
     margin: 15px 15px 2px;
     font-size: 20px;    
@@ -96,8 +100,8 @@ input{
     margin-top: 25px;
 }
 #range{
-    background-image: none;
     accent-color: #fc5a94;
+
 }
 .size{
     width: 20%;
