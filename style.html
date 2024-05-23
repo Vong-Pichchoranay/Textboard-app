@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stlye.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <title>Document</title>
+</head>
+<body>
+    <div class="phone"> 
+        <div class="displayBox"></div>
+
+        <div class="Screen"> <br><br>
+            <img class="fullScreen" src="image/Full Screen - Color.png" alt="">
+        </div>
+        <br><br>
+
+        <div class="container">
+            <div class="btn">
+                <button class="Shadow" id="shadowBtn" type="button">Shadow</button>
+                <button class="outline" id="outlineBtn" type="button">Outline</button>
+            </div>
+
+            <div class="chooseFont" id="shadowContent"  >  
+                <label for="Color">Color</label>
+                <input type="color" class="color">
+                <br>
+                <label for="text">Size</label>
+                
+                <!-- <input type="text" class="size" name="color"> -->
+                <input type="number" class="size">
+                
+                <br>
+                <label for="text">Shadow Direction</label> <br>
+                <label for="text">X</label>
+                <input type="number"class="x">
+                
+                
+                <label for="text">Y</label>
+                <input type="number" class="y">
+                
+               </label>
+                <br>
+                <label for="range">Opacity</label>
+                <input type="range"  id="range" name="range" required>
+                <!-- <div class="Opacity">Opacity</div> -->
+                
+            </div>
+            
+
+            <div class="chooseSize" id="outlineContent" hidden>  
+                <label for="Color">Color</label>
+                <input type="color" class="color">
+                <br>
+                <label for="text">Size</label>
+                <input type="number" class="size" name="color">
+                <br>
+                <!-- <label for="text">Outline Direction</label> <br> -->
+                <label for="range">Opacity</label>
+                <input type="range" id="range" name="range" required
+
+                </select>
+            </div>
+
+            <div class="logo">
+                <img class="buttonLogo1" src="image/Text - Black.png" alt="">
+                <img class="buttonLogo2" src="image/Style - Black.png" alt="">
+                <img class="buttonLogo3" src="image/Background - Black.png" alt="">
+                <img class="buttonLogo4" src="image/Animation - Black.png" alt="">             
+            </div>
+
+            <div class="text">
+                <p class="text1">Text</p>
+                <p class="text2">Style</p>
+                <p class="text3">Background</p>
+                <p class="text4">Animation</p>
+            </div>   
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+             let shadowBtn = document.getElementById("shadowBtn");
+            let outlineBtn = document.getElementById("outlineBtn");
+
+            let shadowContent = document.getElementById("shadowContent");
+            let outlineContent = document.getElementById("outlineContent");
+
+            let focus = "";
+
+            shadowBtn.onclick = () => {
+                handleBtnClick(shadowBtn, shadowContent);
+            }
+
+            outlineBtn.onclick = () => {
+                handleBtnClick(outlineBtn, outlineContent);
+            }
+
+            function handleBtnClick(button, content) {
+                resetBtnColor();
+                hideAllContent();
+                if (focus === button.id) {
+                    focus = "";
+                    return;
+                }
+                focus = button.id;
+                button.style.backgroundColor = "#FC5A94";
+                content.hidden = false;
+            }
+
+            function hideAllContent() {
+                shadowContent.hidden = true;
+                outlineContent.hidden = true;
+            }
+
+            function resetBtnColor() {
+                shadowBtn.style.backgroundColor = "white";
+                outlineBtn.style.backgroundColor = "";
+            }
+
+        });
+    </script>
+</body>
+</html>
