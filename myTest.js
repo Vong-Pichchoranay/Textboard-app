@@ -29,7 +29,7 @@ var fullScreen = document.getElementsByClassName('fullScreen')[0];
 var phone = document.getElementsByClassName('phone')[0];
 
 
-fullScreen.addEventListener('click', ()=>{
+document.getElementsByClassName('fullScreen')[0].addEventListener('click', ()=>{
     // canvas.style.display = 'none';
     phone.style.display = 'none';
     myCanvas.style.display = 'block';
