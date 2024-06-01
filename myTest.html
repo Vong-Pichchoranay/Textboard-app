@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="myTest.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <div class="phone">
+        <!-- PREVIEW BOX -->
+        <!-- <div id="output" class="displayBox">
+            <div id="outputT"></div>
+        </div> -->
+
+        <canvas id="output" class="displayBox"></canvas>
+
+        <div class="Screen">
+            <img class="fullScreen" src="burger.jpg" alt="">
+        </div>
+
+        <div class="container">
+            <!-- PAGE01: TEXT -->
+            <div id="Text_Button" class="contentSection" style="display: none;">
+                <textarea type="text" id="inputBox" placeholder="Input your text..."></textarea>
+            
+                <div class="chooseFont">
+                    <div class="fontColorSize">
+                        <label for="fontColor">Color</label>
+                        <input type="color" id="fontColor"></br>
+                    </div>
+                    <div class="fontColorSize">
+                        <label for="fontSize">Size</label>
+                        <input type="number" id="fontSize" min="10" max="150" value="28"></br>
+                    </div>
+                    <div>
+                        <label for="fontStyle">Font-Style</label>
+                        <div id="fontStyle">
+                            <div class="fontOption" style="font-family: 'Kaushan Script';" onclick="setFontStyle('Kaushan Script', this)">Kaushan Script</div>
+                            <div class="fontOption" style="font-family: 'Jolly Lodger', system-ui;" onclick="setFontStyle('Jolly Lodger', this)">Fredran</div>
+                            <div class="fontOption" style="font-family: 'Faster One', system-ui;" onclick="setFontStyle('Faster One', this)">Faster One</div>
+                            <div class="fontOption" style="font-family: 'Hanalei Fill', system-ui;" onclick="setFontStyle('Hanalei Fill', this)">Hanalei Fill</div>
+                            <div class="fontOption" style="font-family: 'Kanit';" onclick="setFontStyle('Kanit', this)">Kanit</div>
+                            <div class="fontOption" style="font-family: 'Danfo', serif;" onclick="setFontStyle('Danfo', this)">Danfo</div>
+                            <div class="fontOption" style="font-family: 'Noto Serif TC', serif;" onclick="setFontStyle('Noto Serif TC', this)">Noto Serif TC</div>
+                            <div class="fontOption" style="font-family: 'Noto Sans Khmer', serif;" onclick="setFontStyle('Noto Serif Khmer', this)">Noto Khmer</div>
+                            <div class="fontOption" style="font-family: 'Konkhmer Sleokchher', system-ui;" onclick="setFontStyle('Konkhmer Sleokchher', this)">Sleokchher</div>
+                            <div class="fontOption" style="font-family: 'Noto Sans Khmer', sans-serif;" onclick="setFontStyle('Noto Sans Khmer', this)">Sans Khmer</div>
+                            <div class="fontOption" style="font-family: 'Arial', cursive;" onclick="setFontStyle('Arial', this)">Arial</div>
+                            <div class="fontOption" style="font-family: 'Satisfy', cursive;" onclick="setFontStyle('Satisfy', this)">Satisfy</div>
+                            <div class="fontOption" style="font-family: 'Shadows Into Light', cursive;" onclick="setFontStyle('Shadows Into Light', this)">Shadows Light</div>
+                            <div class="fontOption" style="font-family: 'Teko', sans-serif;" onclick="setFontStyle('Teko', this)">Teko</div>
+                            <div class="fontOption" style="font-family: 'Jaro', sans-serif;" onclick="setFontStyle('Jaro', this)">Jaro</div>
+                            <div class="fontOption" style="font-family: 'Noto Sans SC', sans-serif;" onclick="setFontStyle('Noto Sans SC', this)">Noto Sans SC</div>
+                            <div class="fontOption" style="font-family: 'Bebas Neue', sans-serif;" onclick="setFontStyle('Bebas Neue', this)">Bebas Neue</div>
+                            <div class="fontOption" style="font-family: 'Noto Sans TC', sans-serif;" onclick="setFontStyle('Noto Sans TC', this)">Noto Sans TC</div>
+                            <div class="fontOption" style="font-family: 'Noto Sans KR', sans-serif;" onclick="setFontStyle('Noto Sans KR', this)">Noto Sans KR</div>
+                            <div class="fontOption" style="font-family: 'Playfair Display', serif;" onclick="setFontStyle('Playfair Display', this)">Playfair Display</div>
+                            <div class="fontOption" style="font-family: 'Oswald', sans-serif;" onclick="setFontStyle('Oswald', this)">Oswald</div>
+                            <div class="fontOption" style="font-family: 'Poetsen One', sans-serif;" onclick="setFontStyle('Poetsen One', this)">Poetsen One</div>
+                            <div class="fontOption" style="font-family: 'Acme', sans-serif;" onclick="setFontStyle('Acme', this)">Acme</div>
+                            <div class="fontOption" style="font-family: 'Rubik Mono One', monospace;" onclick="setFontStyle('Rubik Mono One', this)">Rubik</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE02: STYLE-->
+            <div id="Style_Button" class="contentSection" style="display: none;">
+                <div class="btn">
+                    <button id="shadowBtn" type="button">Shadow</button>
+                    <button  id="outlineBtn" type="button">Outline</button>
+                </div>
+
+                <!-- SHADOW SETTINGS -->
+                <div id="shadowContent"> 
+                    <div class="fontColorSize2">
+                        <label for="shadColor">Color</label>
+                        <input type="color" id="shadColor"></br>
+                    </div>
+                    <div class="fontColorSize2">
+                        <label for="fontBlur">Blur</label>
+                        <input type="number" id="fontBlur" value="0"></br>
+                    </div>
+                    
+                    <div class="shadowDirection">
+                        <label for="text">Shadow Direction</label>
+                        <div>
+                            <label for="text">X</label>
+                            <input type="number"class="x" value="0">
+                            <label for="text">Y</label>
+                            <input type="number" class="y" value="0">
+                        </div>
+                    </div>
+    
+                    <div>
+                        <label for="shadOpac">Opacity</label>
+                        <input type="range" id="shadOpac" min="0" max="100" value="100" class="opacity" required>
+                    </div>
+                </div>
+
+                <!-- OUTLINE SETTINGS  -->
+                <div id="outlineContent" hidden>  
+                    <div class="fontColorSize">
+                        <label for="strColor">Color</label>
+                        <input type="color" id="strColor"></br>
+                    </div>
+                    <div class="fontColorSize">
+                        <label for="strWidth">Size</label>
+                        <input type="number" id="strWidth"></br>
+                    </div>
+                    <div>
+                        <label for="range">Opacity</label>
+                        <input type="range" id="range" min="0" max="100" value="50" class="opacity" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE03: BG -->
+            <div id="Background_Button" class="contentSection" style="display: none;"></div>
+
+
+            <!-- PAGE04: ANIMATE -->
+                
+            <div id="Animation_Button" class="contentSection" style="display: none;">
+                <div class="btn">
+                    <button id="aniBtn" type="button">Animation</button>
+                    <button  id="effBtn" type="button">Effects</button>
+                </div>
+
+                <!-- animation -->
+                <div id="aniContent"> 
+                    <div id="aniOps">
+                        <div class="op00">None</div>
+                        <div class="op00">Loop</div>
+                        <div class="op00">Blink</div>
+                        <div class="op00">Slide</div>
+                        <div class="op00">Fade</div>
+                        <div class="op00">Wipe</div>
+                        <div class="op00"></div>
+                        <div class="op00"></div>
+                        <div class="op00"></div>
+                        <div class="op00"></div>
+                        <div class="op00"></div>
+                        <div class="op00"></div>
+                    </div>
+                    <div class="aniSettings">
+                        <div id="aniani">
+                            <div class="aniDuration">Duration</div>
+                            <input type="number" id="aniDur">
+                        </div>
+
+                        <div id="aniani">
+                            <div class="aniDuration">Pause</div>
+                            <input type="number" id="aniDur">
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+
+                <!-- effects -->
+                <div id="effContent" hidden>
+                    <div id="effOps">
+                        <div class="op00" id="noEffects">None</div>
+                        <div class="op00" id="colorful">Colorful</div>
+                        <div class="op00" id="newfire">Newfire</div>
+                        <div class="op00" id="snow">Snow</div>
+                        <div class="op00" id="rain">Rain</div>                     
+                    </div>
+               
+
+                </div>
+
+
+                
+            </div>
+
+
+        </div>
+
+        
+
+
+
+        <div class="buttons">
+            <div class="buttonLogo" onclick="showContent('Text_Button')">
+                <!-- <img id="text" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Text - Black.png" alt=""> -->
+                <p class="text">Text</p>
+            </div>
+            <div class="buttonLogo" onclick="showContent('Style_Button')">
+                <!-- <img id="style" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Style - Black.png" alt=""> -->
+                <p class="style">Style</p>
+            </div>
+            <div class="buttonLogo" onclick="showContent('Background_Button')">
+                <!-- <img id="background" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Background - Black.png" alt=""> -->
+                <p class="background">Background</p>
+            </div>
+            <div class="buttonLogo" onclick="showContent('Animation_Button')">
+                <!-- <img id="animation" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Animation - Black.png" alt=""> -->
+                <p class="animation">Animation</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="JavaScrip.js"></script> -->
+    <script src="myTest.js"></script>
+</body>
+</html>
+
+
+
+
+

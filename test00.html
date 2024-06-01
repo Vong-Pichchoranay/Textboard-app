@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1 id="text">this is my text</h1>
+
+        <div class="fontColorSize2">
+            <label for="fontColor">Color</label>
+            <input type="color" id="fontColor"></br>
+        </div>
+
+        <div class="fontColorSize2">
+            <label for="fontBlur">Blur</label>
+            <input type="number" id="fontBlur" value="0"></br>
+        </div>
+        
+        <div class="shadowDirection">
+            <label for="text">Shadow Direction</label>
+            <div>
+                <label for="text">X</label>
+                <input type="number"class="x" value="0">
+                <label for="text">Y</label>
+                <input type="number" class="y" value="0">
+            </div>
+        </div>
+
+        <div>
+            <label for="shadOpac">Opacity</label>
+            <input type="range" id="shadOpac" min="0" max="100" value="100" class="opacity" required>
+        </div>
+
+        <!-- outline -->
+
+        <br/>
+        <div id="outlineContent">  
+            <div class="fontColorSize">
+                <label for="strColor">Color</label>
+                <input type="color" id="strColor"></br>
+            </div>
+
+            <div class="fontColorSize">
+                <label for="strWidth">Size</label>
+                <input type="number" id="strWidth" value="0"></br>
+            </div>
+
+            <!-- <div>
+                <label for="range">Opacity</label>
+                <input type="range" id="range" min="0" max="100" value="50" class="opacity" required>
+            </div> -->
+        </div>
+
+    </body>
+</html>
+
+<style>
+    h1{
+        /* text-shadow: 2px 2px red; */
+/* 
+        -webkit-text-fill-color: white;  
+        font-size: 50px;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: pink; */
+
+        stroke-opacity: 0.25; 
+            stroke: green; 
+            stroke-width: 20px; 
+        
+        
+    }
+</style>
+
+
+
+<script>
+        // document.getElementById('fontColor').addEventListener('input', setShadow);
+        
+        // document.getElementsByClassName('x')[0].addEventListener('input', setShadow);
+        // document.getElementsByClassName('y')[0].addEventListener('input', setShadow);
+
+        // document.getElementById('fontBlur').addEventListener('input', setShadow);
+
+        // document.getElementById('shadOpac').addEventListener('input', setShadow);
+
+        // document.getElementById('strColor').addEventListener('input', setOutline);
+        // document.getElementById('strWidth').addEventListener('input', setOutline);
+    setShadow();
+
+    function setShadow(){
+        var output = document.getElementById("text");
+        
+        // const color = document.getElementById('fontColor').value;
+        // const xsh = document.getElementsByClassName('x')[0].value;
+        // const ysh = document.getElementsByClassName('y')[0].value;
+        // const blur = document.getElementById('fontBlur').value;
+        // const opacity = document.getElementById('shadOpac').value;
+        // let tmp = opacity/100;
+
+        // console.log("shadow color: " + color);
+        // console.log("x SHADOW:" + xsh);
+        // console.log("Y SHADOW: " + ysh);
+        // console.log("BLUR:" + blur);
+        // console.log("OPACITY: " + opacity);
+
+        // console.log("RUNNING SETSHADOW");
+
+        // output.style.textShadow = "2px 2px 2px red";
+
+        // output.style.textShadow = "xsh" + "px" + " ysh" + "px" + " color";
+
+        // let c = "#ea3434";
+        // let a = 2;
+        
+        // output.style.textShadow = `${xsh}px ${ysh}px ${blur}px ${color}`;
+        // output.style.opacity = tmp;
+
+        
+        // border-width
+        // border-style
+        // border-color
+
+        // output.style.outline = "5px solid red";
+        // output.style.webkitTextStroke = "2px #ff0000, 0.7";
+        
+        // output.style.stroke = greeen;
+        // output.style.strokeOpacity = "0.25";
+
+
+
+    }
+
+    // setOutline();
+    // function setOutline(){
+    //     var output = document.getElementById("text");
+
+    //     const strColor = document.getElementById('strColor').value;
+    //     const strWidth = document.getElementById('strWidth').value;
+
+    //     output.style.webkitTextStrokeColor = strColor;
+    //     output.style.webkitTextStrokeWidth = `${strWidth}px`;
+    // }
+
+  
+</script>

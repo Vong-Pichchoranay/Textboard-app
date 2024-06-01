@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Bebas+Neue&family=Danfo&family=Faster+One&family=Federant&family=Hanalei+Fill&family=Jaro:opsz@6..72&family=Jersey+10&family=Jersey+20&family=Jersey+25+Charted&family=Jolly+Lodger&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kaushan+Script&family=Konkhmer+Sleokchher&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans+Khmer:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+Khmer:wght@100..900&family=Noto+Serif+TC:wght@200..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Rubik+Mono+One&family=Satisfy&family=Shadows+Into+Light&family=Teko:wght@300..700&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+    font-family: "Kanit", sans-serif;
+    margin: 0;
+}
+.phone{
+    height: 850px;
+    width: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: transparent;  
+    position: relative;  
+    /* background-color: #FC5A94; */
+}
+#myCanvas{
+    display: none;
+    /* width: 1000px;
+    height: 500px; */
+    background-color: #FC5A94;
+}
+.displayBox{
+    /* background-color: red; */
+    height: 255px;
+    width: 372px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border-top: 1px solid #FC5A94;          
+    box-shadow: 0 4px 4px 2px rgb(0 0 0 / 25%) ;
+    box-sizing: border-box;
+    padding: 15px;
+    overflow: auto;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.displayBox::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+.displayBox::-webkit-scrollbar-track {
+    box-shadow: inset 0 5px 10px #FFD3E3;
+    border-radius: 10px;
+    margin: 3px;
+}
+
+.displayBox::-webkit-scrollbar-thumb {
+    background: #FF93BA;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.Screen{
+    position: absolute;
+    top: 37.5%;
+    right: 5%;
+}
+.fullScreen{
+    width: 25px;
+    height: 25px;
+}
+
+.buttons {
+    margin-top: 13px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    border-radius: 15px;
+    border-bottom: 1.5px solid #FC5A94;
+    box-shadow: 2px 4px 4px 1px rgb(0 0 0 / 25%);
+    height: 75px;
+    cursor: pointer;
+}
+
+.buttonLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonLogo img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.buttonLogo p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.container{
+    width: 370px;
+    height: 336px;
+    border-radius: 13px;
+    margin-top: 39px; 
+    border-bottom: 1px solid #FC5A94;
+    box-shadow: 0 0 3px 1px rgb(0 0 0 / 25%);
+    display: flex;
+    padding: 20px 0 0 15px;
+}
+
+/* Text_Button */
+#Text_Button{
+    display: flex;
+    flex-direction: row;
+}
+
+#inputBox{
+    height: 298px;
+    width: 169px;
+    border-radius: 15px;
+    border: 1px solid #FD92B9;
+    padding: 10px 0 10px 13px;
+    box-shadow: 1px 3px 3px 1px rgb(0 0 0 / 25%);
+    display: flex;
+    align-items: flex-start;
+    font-family: 'kanit';
+}
+
+#inputBox::placeholder{
+    text-align: start;
+    font-family: 'kanit';
+    font-size: 16px;
+}
+
+.chooseFont{
+    margin-left: 9px;
+    font-size: 20px;
+}
+
+.fontColorSize{
+    margin: -5px 0 17px 0;
+}
+
+#fontColor, #shadColor, #strColor{
+    height: 29px;
+    width: 30px;
+    margin-left: 16px;
+    border: 1px solid #FFA5C5;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#fontSize, #fontBlur, #strWidth{
+    height: 29px;
+    width: 60px;
+    margin-left: 16px;
+    padding-left: 5px;
+    border: 1px solid #FFA5C5;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#fontStyle{
+    height: 140px;
+    width: 133px;
+    border: 1px solid #FD92B9;
+    border-radius: 10px;
+    margin-top: 7px;
+    margin-left: 10px;
+    padding: 5px 0px 0 9px;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-y: scroll;
+    cursor: pointer;   
+}
+
+.selected {
+    background-color: rgba(255, 165, 197, 0.4);
+    color: black;   
+    width: 120px;
+}
+
+#fontStyle::-webkit-scrollbar {
+    width: 8px;
+}
+  
+#fontStyle::-webkit-scrollbar-track {
+    box-shadow: inset 0 5px 10px #FFD3E3; 
+    border-radius: 10px;
+    margin:3px;
+}
+   
+#fontStyle::-webkit-scrollbar-thumb {
+    background: #FF93BA; 
+    border-radius: 10px;
+    margin: 2px;
+}
+  
+#fontStyle::-webkit-scrollbar-thumb:hover {
+    background: #FC5A94; 
+}
+
+
+/* Style Button */
+#Style_Button{
+    display: flex;
+    flex-direction: column;
+}
+.fontColorSize2{
+    margin-top: -7px;
+}
+.btn{
+    width: 100%;
+    height: 15%;
+    margin: 0px 0px 0px;
+}
+#shadowBtn, #aniBtn{
+    width: 168px;
+    height: 41px;
+    margin-left: 7px;
+    background-color: #ff669d;
+    font-size: 20px;
+    padding: 9px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 25%);
+    color: white;
+}
+#outlineBtn, #effBtn{
+    width: 168px;
+    height: 41px;
+    font-size: 20px;
+    padding: 9px;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 25%);
+    border: 1px solid #FCC5D9;
+    background-color: white;
+    border-radius: 4px;
+}
+
+#shadowContent, #outlineContent, #aniContent, #effContent{
+    width: 343px;
+    height: 260px;
+    margin-left: 6px;
+    margin-top: 8px;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 25%);
+    border-radius: 10px; 
+    border-top: 1px solid #FC5A94; 
+    border-left: 1px solid #FC5A94; 
+    border-right: 1px solid #FC5A94; 
+    
+}
+
+.shadowDirection{
+    margin-top: 15px;
+}
+.x, .y, label{
+    margin: 15px 15px 2px;
+    font-size: 20px;  
+    border-radius: 5px; 
+    width: 15% 
+}
+input{
+    border: 1px solid #FFA5C5 ;
+    margin-top: 25px;
+}
+.opacity {
+    -webkit-appearance: none;
+    width: 165px;
+    height: 4px;
+    background: #FFC7DB;
+    outline: none;
+    opacity: 0.7;
+    border: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+.opacity:hover {
+    opacity: 1;
+}
+  
+.opacity::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #FC5A94;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+
+
+
+/* Background Button */
+
+/* Animation Button*/
+
+#Animation_Button{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+            .outputT{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+
+            }
+            .bubbles{
+                position: relative;
+                display: flex;
+            }
+            .bubbles span{
+                position: relative;
+                width: 30px;
+                height: 30px;
+                background:#ffffff;
+                margin: 0 4px;
+                border-radius: 50%;
+                box-shadow: 0 0 0 10px #ffffff,
+                            0 0 50px #ffffff, 
+                            0 0 100px #ffffff;
+                animation: animate 4s linear infinite;
+                animation-duration: calc(50s / var(--i));
+            }
+
+            .bubbles span:nth-child(even){
+                background: rgb(128, 215, 252);
+                box-shadow: 0 0 0 10px rgb(119, 221, 255),
+                            0 0 50px rgb(173, 255, 232),
+                            0 0 100px rgb(255, 255, 255);
+
+            }
+            @keyframes animate
+            {
+                0%
+                {
+                    transform: translateY(100vh) scale(0);
+                }
+                100%
+                {
+                    transform: translateY(-100vh) scale(1);
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @keyframes blink {
+                0% { opacity: 0 }
+                100% { opacity: 1 }
+        }
+
+            #effOps{
+                height:200px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                /* background-color: yellowgreen; */
+            }
+
+            #effOps .op00{
+                /* background-color: yellow; */
+                margin-right: 0px;
+                margin-left: 20px;
+                margin-top: 30px;
+                height: 80px;
+                width: 85px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+            }
+
+            #effOps .op00:hover{
+                cursor: pointer;
+                color: white;
+                background-color: #FC5A94;
+            }
+
+
+            #aniOps{
+                height:200px;
+                /* background-color: yellow; */
+                margin-top: 20px;
+                margin-left: 20px;
+                margin-right: 20px;
+                overflow-y: scroll;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                border-top: solid 1px #FCC5D9;
+                border-bottom: solid 1px #FCC5D9;
+            }
+
+            #aniani{
+                display: flex;
+                flex-direction: row;
+                /* background-color: aqua; */
+                margin-right: px;
+                padding: 0px;
+                align-items: center;
+                
+            }
+
+            .aniDuration{
+                font-size: 14px;
+            }
+
+            #aniDur{
+                /* background-color: red; */
+                margin:0px;
+                margin-left: 5px;
+                
+                padding-inline: 5px;
+                height: 15px;
+                width: 50px;
+                border-radius: 10px;
+            }
+
+            #aniOps::-webkit-scrollbar {
+                width: 8px;
+            }
+            
+            #aniOps::-webkit-scrollbar-track {
+                box-shadow: inset 0 5px 10px #FFD3E3; 
+                border-radius: 10px;
+                margin:3px;
+            }
+            
+            #aniOps::-webkit-scrollbar-thumb {
+                background: #FF93BA; 
+                border-radius: 10px;
+                margin: 2px;
+            }
+            
+            #aniOps::-webkit-scrollbar-thumb:hover {
+                background: #FC5A94; 
+            }
+
+            .op00{
+                width: 75px;
+                height: 70px;
+                background-color: white;
+                margin-right: 20px;
+                margin-top: 20px;
+                border-radius: 10px;
+                border: solid 1px #FF93BA;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .op00:hover{
+                cursor: pointer;
+                color:white;
+                background-color: #FC5A94;
+            }
+
+            .aniSettings{
+                display: flex;
+                flex-direction: row;
+                /* background-color: red; */
+                margin-left: 25px;
+                margin-right: 25px;
+                margin-top: 5px;
+                justify-content: space-between;
+            }
+
+

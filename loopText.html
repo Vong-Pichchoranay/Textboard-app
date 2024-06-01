@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body>
+        <div class="h-screen w-screen flex justify-center items-center ">
+            <div class="text-wrapper w-56 flex bg-yellow-800">
+                <h1>keep</h1>
+            </div>
+        </div>
+        
+    </body>
+</html>
+
+<style>
+    *{
+        margin: 0;
+        box-sizing: border-box;
+
+    }
+
+    .text-wrapper{
+        display: flex;
+        justify-content: center;
+        /* background: blue; */
+        /* overflow: hidden; */
+    }
+
+    h1{
+        font-size: 48px;
+        color:transparent;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: white;
+        /* text-stroke-color: white; */
+        white-space: nowrap;
+        padding: 0.6rem;
+        letter-spacing: 1px;
+        /* animation: move-rtl 6s linear infinite; */
+
+        text-shadow: 0 0 10px white,
+                        0 0 20px white,
+                        0 0 40px white,
+                        0 0 80px white,
+                        0 0 120px white;
+        /* animation: blink 1s infinite; */
+        /* animation-fill-mode: both; */
+        animation: fade 2s linear infinite;
+        /* animation: move-rtl 3s linear infinite, blink 1s linear infinite; */
+
+    }
+
+    @keyframes move-rtl {
+        0%{
+            transform: translateX(130%);
+        }
+        100%{
+            transform: translateX(-130%);
+        }
+        
+    }
+    
+    @keyframes blink {
+        0% { opacity: 0 }
+        100% { opacity: 1 }
+   }
+    
+
+   @keyframes fade {
+        0% { opacity: 1 }
+        70% { opacity: 0.5}
+        100% { opacity: 0 }
+   }
+
+</style>

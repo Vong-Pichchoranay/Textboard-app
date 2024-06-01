@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+
+    <body>
+        <h1 id="text">this is my text</h1>
+
+        <div class="fontColorSize2">
+            <label for="fontColor">Color</label>
+            <input type="color" id="fontColor"></br>
+        </div>
+
+        <div class="fontColorSize2">
+            <label for="fontSize">Size</label>
+            <input type="number" id="fontSize"></br>
+        </div>
+        
+        <div class="shadowDirection">
+            <label for="text">Shadow Direction</label>
+            <div>
+                <label for="text">X</label>
+                <input type="number"class="x">
+                <label for="text">Y</label>
+                <input type="number" class="y">
+            </div>
+        </div>
+
+        <button onlick="setShadow22()">update shadow </button>
+    </body>
+</html>
+
+<style>
+    h1{
+        /* text-shadow: 2px 2px red; */
+        
+    }
+</style>
+
+
+
+<script>
+        // document.getElementById('inputBox').addEventListener('input', setShadow);
+        // document.getElementById('inputBox').addEventListener('input', setShadow);
+        // document.getElementById('inputBox').addEventListener('input', setShadow);
+
+
+    function setShadow(){
+        var output = document.getElementById("text");
+        
+        const color = document.getElementById('fontColor').value;
+        const xsh = document.getElementsByClassName('x').value;
+        const ysh = document.getElementsByClassName('y').value;
+        const size = document.getElementById('fontSize').value;
+
+        console.log("shadow color: " + color);
+        console.log("x SHADOW:" + xsh);
+        console.log("Y SHADOW: " + ysh);
+        console.log("SIZE:" + size);
+
+        console.log("RUNNING SETSHADOW");
+
+        // output.style.textShadow = "2px 0px red";
+
+
+
+
+    }
+
+    function setShadow22(){
+
+        console.log("hello");
+        
+    }
+</script>

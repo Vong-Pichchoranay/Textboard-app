@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<!-- <h1>HTML5 Canvas</h1>
+<h2>The translate() Method</h2> -->
+
+<canvas id="myCanvas" style="border:1px solid grey"></canvas>
+<button id="fullScreen">Full Screen</button>
+
+<style>
+    body{
+        margin: 0px;
+    }
+</style>
+
+<script>
+    const c = document.getElementById("myCanvas");
+    let fullScreen = document.getElementById('fullScreen');
+
+    const ctx = c.getContext("2d");
+    c.width = 500;
+    c.height = 300;
+
+    var w = c.width;
+    var h = c.height;
+
+    updateText();
+
+    function updateText(){
+        ctx.font = "60px Arial";
+        ctx.fillStyle = "red";
+        ctx.textAlign = "center";
+        ctx.fillText("hello world", w/2, h/2);
+    }
+
+    fullScreen.addEventListener('click', ()=>{
+        ctx.clearRect(0, 0, w, h);
+        fullScreen.style.display = 'none';
+
+        c.width = window.innerWidth;
+        c.height = window.innerHeight;
+        // console.log("full screen width: " + w);
+        ctx.translate(c.width, 0);
+        ctx.rotate((Math.PI / 180) * 90);
+        updateText();
+    })
+    // ctx.fillRect(10, 10, 100, 50);
+    // ctx.translate(w, 0);
+    // ctx.rotate((Math.PI / 180) * 90);
+    // ctx.textAlign = "center";
+    // ctx.fillText("helllo world", w/2, h/2);
+
+    // ctx.translate(0, 100);
+    // ctx.scale(-1, 1);   // changing direction of axis
+    // ctx.fillRect(10, 10, 100, 50);
+    // ctx.fillText("helllo world", -90, 10);
+</script>
+
+</body>
+</html>
