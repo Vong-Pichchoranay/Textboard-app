@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="myTest.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <div class="phone">
+        <!-- PREVIEW BOX -->
+        <!-- <div id="output" class="displayBox">
+            <div id="outputT"></div>
+        </div> -->
+
+        <canvas id="output" class="displayBox"></canvas>
+
+        <div class="Screen">
+            <img class="fullScreen" src="burger.jpg" alt="">
+        </div>
+
+        <div class="container">
+            <!-- PAGE01: TEXT -->
+            <div id="Text_Button" class="contentSection" style="display: none;">
+                <textarea type="text" id="inputBox" placeholder="Input your text..."></textarea>
+            
+                <div class="chooseFont">
+                    <div class="fontColorSize">
+                        <label for="fontColor">Color</label>
+                        <input type="color" id="fontColor"></br>
+                    </div>
+                    <div class="fontColorSize">
+                        <label for="fontSize">Size</label>
+                        <input type="number" id="fontSize" min="10" max="150" value="28"></br>
+                    </div>
+                    <div>
+                        <label for="fontStyle">Font-Style</label>
+                        <div id="fontStyle">
+                            <div class="fontOption" style="font-family: 'Kaushan Script';" onclick="setFontStyle('Kaushan Script', this)">Kaushan Script</div>
+                            <div class="fontOption" style="font-family: 'Jolly Lodger', system-ui;" onclick="setFontStyle('Jolly Lodger', this)">Fredran</div>
+                            <div class="fontOption" style="font-family: 'Faster One', system-ui;" onclick="setFontStyle('Faster One', this)">Faster One</div>
+                            <div class="fontOption" style="font-family: 'Hanalei Fill', system-ui;" onclick="setFontStyle('Hanalei Fill', this)">Hanalei Fill</div>
+                            <div class="fontOption" style="font-family: 'Kanit';" onclick="setFontStyle('Kanit', this)">Kanit</div>
+                            <div class="fontOption" style="font-family: 'Danfo', serif;" onclick="setFontStyle('Danfo', this)">Danfo</div>
+                            <div class="fontOption" style="font-family: 'Noto Serif TC', serif;" onclick="setFontStyle('Noto Serif TC', this)">Noto Serif TC</div>
+                            <div class="fontOption" style="font-family: 'Noto Sans Khmer', serif;" onclick="setFontStyle('Noto Serif Khmer', this)">Noto Khmer</div>
+                            <div class="fontOption" style="font-family: 'Konkhmer Sleokchher', system-ui;" onclick="setFontStyle('Konkhmer Sleokchher', this)">Sleokchher</div>
+                            <div class="fontOption" style="font-family: 'Noto Sans Khmer', sans-serif;" onclick="setFontStyle('Noto Sans Khmer', this)">Sans Khmer</div>
+                            <div class="fontOption" style="font-family: 'Arial', cursive;" onclick="setFontStyle('Arial', this)">Arial</div>
+                            <div class="fontOption" style="font-family: 'Satisfy', cursive;" onclick="setFontStyle('Satisfy', this)">Satisfy</div>
+                            <div class="fontOption" style="font-family: 'Shadows Into Light', cursive;" onclick="setFontStyle('Shadows Into Light', this)">Shadows Light</div>
+                            <div class="fontOption" style="font-family: 'Teko', sans-serif;" onclick="setFontStyle('Teko', this)">Teko</div>
+                            <div class="fontOption" style="font-family: 'Jaro', sans-serif;" onclick="setFontStyle('Jaro', this)">Jaro</div>
+                            <div class="fontOption" style="font-family: 'Noto Sans SC', sans-serif;" onclick="setFontStyle('Noto Sans SC', this)">Noto Sans SC</div>
+                            <div class="fontOption" style="font-family: 'Bebas Neue', sans-serif;" onclick="setFontStyle('Bebas Neue', this)">Bebas Neue</div>
+                            <div class="fontOption" style="font-family: 'Noto Sans TC', sans-serif;" onclick="setFontStyle('Noto Sans TC', this)">Noto Sans TC</div>
+                            <div class="fontOption" style="font-family: 'Noto Sans KR', sans-serif;" onclick="setFontStyle('Noto Sans KR', this)">Noto Sans KR</div>
+                            <div class="fontOption" style="font-family: 'Playfair Display', serif;" onclick="setFontStyle('Playfair Display', this)">Playfair Display</div>
+                            <div class="fontOption" style="font-family: 'Oswald', sans-serif;" onclick="setFontStyle('Oswald', this)">Oswald</div>
+                            <div class="fontOption" style="font-family: 'Poetsen One', sans-serif;" onclick="setFontStyle('Poetsen One', this)">Poetsen One</div>
+                            <div class="fontOption" style="font-family: 'Acme', sans-serif;" onclick="setFontStyle('Acme', this)">Acme</div>
+                            <div class="fontOption" style="font-family: 'Rubik Mono One', monospace;" onclick="setFontStyle('Rubik Mono One', this)">Rubik</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE02: STYLE-->
+            <div id="Style_Button" class="contentSection" style="display: none;">
+                <div class="btn">
+                    <button id="shadowBtn" type="button">Shadow</button>
+                    <button  id="outlineBtn" type="button">Outline</button>
+                </div>
+
+                <!-- SHADOW SETTINGS -->
+                <div id="shadowContent"> 
+                    <div class="fontColorSize2">
+                        <label for="shadColor">Color</label>
+                        <input type="color" id="shadColor"></br>
+                    </div>
+                    <div class="fontColorSize2">
+                        <label for="fontBlur">Blur</label>
+                        <input type="number" id="fontBlur" value="0"></br>
+                    </div>
+                    
+                    <div class="shadowDirection">
+                        <label for="text">Shadow Direction</label>
+                        <div>
+                            <label for="text">X</label>
+                            <input type="number"class="x" value="0">
+                            <label for="text">Y</label>
+                            <input type="number" class="y" value="0">
+                        </div>
+                    </div>
+    
+                    <div>
+                        <label for="shadOpac">Opacity</label>
+                        <input type="range" id="shadOpac" min="0" max="100" value="100" class="opacity" required>
+                    </div>
+                </div>
+
+                <!-- OUTLINE SETTINGS  -->
+                <div id="outlineContent" hidden>  
+                    <div class="fontColorSize">
+                        <label for="strColor">Color</label>
+                        <input type="color" id="strColor"></br>
+                    </div>
+                    <div class="fontColorSize">
+                        <label for="strWidth">Size</label>
+                        <input type="number" id="strWidth"></br>
+                    </div>
+                    <div>
+                        <label for="range">Opacity</label>
+                        <input type="range" id="range" min="0" max="100" value="50" class="opacity" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PAGE03: BG -->
+            <div id="Background_Button" class="contentSection" style="display: none;"></div>
+
+
+            <!-- PAGE04: ANIMATE -->
+                
+            <div id="Animation_Button" class="contentSection" style="display: none;">
+                <div class="btn">
+                    <button id="aniBtn" type="button">Animation</button>
+                    <button  id="effBtn" type="button">Effects</button>
+                </div>
+
+                <!-- animation -->
+                <div id="aniContent"> 
+                    <div id="aniOps">
+                        <div class="op00">None</div>
+                        <div class="op00">Loop</div>
+                        <div class="op00">Blink</div>
+                        <div class="op00">Slide</div>
+                        <div class="op00">Fade</div>
+                        <div class="op00">Wipe</div>
+                        <div class="op00"></div>
+                        <div class="op00"></div>
+                        <div class="op00"></div>
+                        <div class="op00"></div>
+                        <div class="op00"></div>
+                        <div class="op00"></div>
+                    </div>
+                    <div class="aniSettings">
+                        <div id="aniani">
+                            <div class="aniDuration">Duration</div>
+                            <input type="number" id="aniDur">
+                        </div>
+
+                        <div id="aniani">
+                            <div class="aniDuration">Pause</div>
+                            <input type="number" id="aniDur">
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+
+                <!-- effects -->
+                <div id="effContent" hidden>
+                    <div id="effOps">
+                        <div class="op00" id="noEffects">None</div>
+                        <div class="op00" id="colorful">Colorful</div>
+                        <div class="op00" id="newfire">Newfire</div>
+                        <div class="op00" id="snow">Snow</div>
+                        <div class="op00" id="rain">Rain</div>                     
+                    </div>
+               
+
+                </div>
+
+
+                
+            </div>
+
+
+        </div>
+
+        
+
+
+
+        <div class="buttons">
+            <div class="buttonLogo" onclick="showContent('Text_Button')">
+                <!-- <img id="text" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Text - Black.png" alt=""> -->
+                <p class="text">Text</p>
+            </div>
+            <div class="buttonLogo" onclick="showContent('Style_Button')">
+                <!-- <img id="style" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Style - Black.png" alt=""> -->
+                <p class="style">Style</p>
+            </div>
+            <div class="buttonLogo" onclick="showContent('Background_Button')">
+                <!-- <img id="background" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Background - Black.png" alt=""> -->
+                <p class="background">Background</p>
+            </div>
+            <div class="buttonLogo" onclick="showContent('Animation_Button')">
+                <!-- <img id="animation" src="D:/I3/Semester 2/All Course/Web Design/Project - Text Board/Icon/Animation - Black.png" alt=""> -->
+                <p class="animation">Animation</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="JavaScrip.js"></script> -->
+    <script src="myTest.js"></script>
+</body>
+</html>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Acme&family=Bebas+Neue&family=Danfo&family=Faster+One&family=Federant&family=Hanalei+Fill&family=Jaro:opsz@6..72&family=Jersey+10&family=Jersey+20&family=Jersey+25+Charted&family=Jolly+Lodger&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Kaushan+Script&family=Konkhmer+Sleokchher&family=Noto+Sans+KR:wght@100..900&family=Noto+Sans+Khmer:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+Khmer:wght@100..900&family=Noto+Serif+TC:wght@200..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poetsen+One&family=Rubik+Mono+One&family=Satisfy&family=Shadows+Into+Light&family=Teko:wght@300..700&display=swap');
+
+body{
+    display: flex;
+    justify-content: center;
+    font-family: "Kanit", sans-serif;
+    margin: 0;
+}
+.phone{
+    height: 850px;
+    width: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: transparent;  
+    position: relative;  
+    /* background-color: #FC5A94; */
+}
+#myCanvas{
+    display: none;
+    /* width: 1000px;
+    height: 500px; */
+    background-color: #FC5A94;
+}
+.displayBox{
+    /* background-color: red; */
+    height: 255px;
+    width: 372px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    border-top: 1px solid #FC5A94;          
+    box-shadow: 0 4px 4px 2px rgb(0 0 0 / 25%) ;
+    box-sizing: border-box;
+    padding: 15px;
+    overflow: auto;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.displayBox::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+
+.displayBox::-webkit-scrollbar-track {
+    box-shadow: inset 0 5px 10px #FFD3E3;
+    border-radius: 10px;
+    margin: 3px;
+}
+
+.displayBox::-webkit-scrollbar-thumb {
+    background: #FF93BA;
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.Screen{
+    position: absolute;
+    top: 37.5%;
+    right: 5%;
+}
+.fullScreen{
+    width: 25px;
+    height: 25px;
+}
+
+.buttons {
+    margin-top: 13px;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    border-radius: 15px;
+    border-bottom: 1.5px solid #FC5A94;
+    box-shadow: 2px 4px 4px 1px rgb(0 0 0 / 25%);
+    height: 75px;
+    cursor: pointer;
+}
+
+.buttonLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonLogo img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+.buttonLogo p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.container{
+    width: 370px;
+    height: 336px;
+    border-radius: 13px;
+    margin-top: 39px; 
+    border-bottom: 1px solid #FC5A94;
+    box-shadow: 0 0 3px 1px rgb(0 0 0 / 25%);
+    display: flex;
+    padding: 20px 0 0 15px;
+}
+
+/* Text_Button */
+#Text_Button{
+    display: flex;
+    flex-direction: row;
+}
+
+#inputBox{
+    height: 298px;
+    width: 169px;
+    border-radius: 15px;
+    border: 1px solid #FD92B9;
+    padding: 10px 0 10px 13px;
+    box-shadow: 1px 3px 3px 1px rgb(0 0 0 / 25%);
+    display: flex;
+    align-items: flex-start;
+    font-family: 'kanit';
+}
+
+#inputBox::placeholder{
+    text-align: start;
+    font-family: 'kanit';
+    font-size: 16px;
+}
+
+.chooseFont{
+    margin-left: 9px;
+    font-size: 20px;
+}
+
+.fontColorSize{
+    margin: -5px 0 17px 0;
+}
+
+#fontColor, #shadColor, #strColor{
+    height: 29px;
+    width: 30px;
+    margin-left: 16px;
+    border: 1px solid #FFA5C5;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#fontSize, #fontBlur, #strWidth{
+    height: 29px;
+    width: 60px;
+    margin-left: 16px;
+    padding-left: 5px;
+    border: 1px solid #FFA5C5;
+    border-radius: 5px;
+    background-color: white;
+}
+
+#fontStyle{
+    height: 140px;
+    width: 133px;
+    border: 1px solid #FD92B9;
+    border-radius: 10px;
+    margin-top: 7px;
+    margin-left: 10px;
+    padding: 5px 0px 0 9px;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-y: scroll;
+    cursor: pointer;   
+}
+
+.selected {
+    background-color: rgba(255, 165, 197, 0.4);
+    color: black;   
+    width: 120px;
+}
+
+#fontStyle::-webkit-scrollbar {
+    width: 8px;
+}
+  
+#fontStyle::-webkit-scrollbar-track {
+    box-shadow: inset 0 5px 10px #FFD3E3; 
+    border-radius: 10px;
+    margin:3px;
+}
+   
+#fontStyle::-webkit-scrollbar-thumb {
+    background: #FF93BA; 
+    border-radius: 10px;
+    margin: 2px;
+}
+  
+#fontStyle::-webkit-scrollbar-thumb:hover {
+    background: #FC5A94; 
+}
+
+
+/* Style Button */
+#Style_Button{
+    display: flex;
+    flex-direction: column;
+}
+.fontColorSize2{
+    margin-top: -7px;
+}
+.btn{
+    width: 100%;
+    height: 15%;
+    margin: 0px 0px 0px;
+}
+#shadowBtn, #aniBtn{
+    width: 168px;
+    height: 41px;
+    margin-left: 7px;
+    background-color: #ff669d;
+    font-size: 20px;
+    padding: 9px;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 25%);
+    color: white;
+}
+#outlineBtn, #effBtn{
+    width: 168px;
+    height: 41px;
+    font-size: 20px;
+    padding: 9px;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 25%);
+    border: 1px solid #FCC5D9;
+    background-color: white;
+    border-radius: 4px;
+}
+
+#shadowContent, #outlineContent, #aniContent, #effContent{
+    width: 343px;
+    height: 260px;
+    margin-left: 6px;
+    margin-top: 8px;
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 25%);
+    border-radius: 10px; 
+    border-top: 1px solid #FC5A94; 
+    border-left: 1px solid #FC5A94; 
+    border-right: 1px solid #FC5A94; 
+    
+}
+
+.shadowDirection{
+    margin-top: 15px;
+}
+.x, .y, label{
+    margin: 15px 15px 2px;
+    font-size: 20px;  
+    border-radius: 5px; 
+    width: 15% 
+}
+input{
+    border: 1px solid #FFA5C5 ;
+    margin-top: 25px;
+}
+.opacity {
+    -webkit-appearance: none;
+    width: 165px;
+    height: 4px;
+    background: #FFC7DB;
+    outline: none;
+    opacity: 0.7;
+    border: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+  
+.opacity:hover {
+    opacity: 1;
+}
+  
+.opacity::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #FC5A94;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+
+
+
+/* Background Button */
+
+/* Animation Button*/
+
+#Animation_Button{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+            .outputT{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+
+            }
+            .bubbles{
+                position: relative;
+                display: flex;
+            }
+            .bubbles span{
+                position: relative;
+                width: 30px;
+                height: 30px;
+                background:#ffffff;
+                margin: 0 4px;
+                border-radius: 50%;
+                box-shadow: 0 0 0 10px #ffffff,
+                            0 0 50px #ffffff, 
+                            0 0 100px #ffffff;
+                animation: animate 4s linear infinite;
+                animation-duration: calc(50s / var(--i));
+            }
+
+            .bubbles span:nth-child(even){
+                background: rgb(128, 215, 252);
+                box-shadow: 0 0 0 10px rgb(119, 221, 255),
+                            0 0 50px rgb(173, 255, 232),
+                            0 0 100px rgb(255, 255, 255);
+
+            }
+            @keyframes animate
+            {
+                0%
+                {
+                    transform: translateY(100vh) scale(0);
+                }
+                100%
+                {
+                    transform: translateY(-100vh) scale(1);
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @keyframes blink {
+                0% { opacity: 0 }
+                100% { opacity: 1 }
+        }
+
+            #effOps{
+                height:200px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                /* background-color: yellowgreen; */
+            }
+
+            #effOps .op00{
+                /* background-color: yellow; */
+                margin-right: 0px;
+                margin-left: 20px;
+                margin-top: 30px;
+                height: 80px;
+                width: 85px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+            }
+
+            #effOps .op00:hover{
+                cursor: pointer;
+                color: white;
+                background-color: #FC5A94;
+            }
+
+
+            #aniOps{
+                height:200px;
+                /* background-color: yellow; */
+                margin-top: 20px;
+                margin-left: 20px;
+                margin-right: 20px;
+                overflow-y: scroll;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                border-top: solid 1px #FCC5D9;
+                border-bottom: solid 1px #FCC5D9;
+            }
+
+            #aniani{
+                display: flex;
+                flex-direction: row;
+                /* background-color: aqua; */
+                margin-right: px;
+                padding: 0px;
+                align-items: center;
+                
+            }
+
+            .aniDuration{
+                font-size: 14px;
+            }
+
+            #aniDur{
+                /* background-color: red; */
+                margin:0px;
+                margin-left: 5px;
+                
+                padding-inline: 5px;
+                height: 15px;
+                width: 50px;
+                border-radius: 10px;
+            }
+
+            #aniOps::-webkit-scrollbar {
+                width: 8px;
+            }
+            
+            #aniOps::-webkit-scrollbar-track {
+                box-shadow: inset 0 5px 10px #FFD3E3; 
+                border-radius: 10px;
+                margin:3px;
+            }
+            
+            #aniOps::-webkit-scrollbar-thumb {
+                background: #FF93BA; 
+                border-radius: 10px;
+                margin: 2px;
+            }
+            
+            #aniOps::-webkit-scrollbar-thumb:hover {
+                background: #FC5A94; 
+            }
+
+            .op00{
+                width: 75px;
+                height: 70px;
+                background-color: white;
+                margin-right: 20px;
+                margin-top: 20px;
+                border-radius: 10px;
+                border: solid 1px #FF93BA;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .op00:hover{
+                cursor: pointer;
+                color:white;
+                background-color: #FC5A94;
+            }
+
+            .aniSettings{
+                display: flex;
+                flex-direction: row;
+                /* background-color: red; */
+                margin-left: 25px;
+                margin-right: 25px;
+                margin-top: 5px;
+                justify-content: space-between;
+            }
+
+
+
+</style>
+
+<script>
+    var canvas = document.getElementById('output');
+var myCanvas = document.getElementById('myCanvas');
+var ctx = myCanvas.getContext('2d');
+var c = canvas.getContext('2d');
+
+var w = canvas.width;
+var h = canvas.height;
+
+var fullScreenWidth = window.innerWidth;
+var fullScreenHeight = window.innerHeight;
+
+document.getElementById('inputBox').addEventListener('input', updateText);
+document.getElementById('fontColor').addEventListener('input', updateText);
+document.getElementById('fontSize').addEventListener('input', updateText);
+
+document.getElementById('shadColor').addEventListener('input', updateText);
+document.getElementsByClassName('x')[0].addEventListener('input', updateText);
+document.getElementsByClassName('y')[0].addEventListener('input', updateText);
+document.getElementById('fontBlur').addEventListener('input', updateText);
+document.getElementById('shadOpac').addEventListener('input', updateText);
+
+document.getElementById('strColor').addEventListener('input', updateText);
+document.getElementById('strWidth').addEventListener('input', updateText);
+
+// var container = document.getElementsByClassName('container')[0];
+// var screen = document.getElementsByClassName('Screen')[0];
+// var banner = document.getElementsByClassName('buttons')[0];
+var fullScreen = document.getElementsByClassName('fullScreen')[0];
+var phone = document.getElementsByClassName('phone')[0];
+
+
+document.getElementsByClassName('fullScreen')[0].addEventListener('click', ()=>{
+    // canvas.style.display = 'none';
+    phone.style.display = 'none';
+    myCanvas.style.display = 'block';
+    enterFullScreen();
+  
+});
+
+function enterFullScreen(){
+    myCanvas.width = fullScreenWidth;
+    myCanvas.height = fullScreenHeight;
+    ctx.translate(fullScreenWidth, 0);
+    ctx.rotate((Math.PI / 180) * 90);
+    ctx.scale(2,2);
+    updateFullScreenText();
+}
+
+// Function to get the mouse position
+function getMousePos(canvas, event) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+      x: event.clientX - rect.left,
+      y: event.clientY - rect.top,
+    };
+  }
+  
+  // Function to check whether a point is inside a rectangle
+  function isInside(pos, rect) {
+    return pos.x > rect.x && pos.x < rect.x + rect.width && pos.y < rect.y + rect.height && pos.y > rect.y
+  }
+  
+  // The rectangle should have x,y,width,height properties
+  var rect = {
+    x: 100,
+    y: 700,
+    width: 200,
+    height: 100,
+  };
+  
+  // Binding the click event on the canvas
+//   canvas.addEventListener('click', function(evt) {
+//         var mousePos = getMousePos(canvas, evt);
+    
+//         if (isInside(mousePos, rect)) {
+//         console.log('clicked inside rect');
+//         } else {
+//         console.log('clicked outside rect');
+//         }
+//   }, false);
+  
+  // Question code
+  function Playbutton(rect, lWidth, fillColor, lineColor) {
+    ctx.beginPath();
+    ctx.rect(rect.x, rect.y, rect.width, rect.height);
+    ctx.fillStyle = 'rgba(225,225,225,0.5)';
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#000000';
+    ctx.stroke();
+    ctx.closePath();
+    ctx.font = '40pt Kremlin Pro Web';
+    ctx.fillStyle = '#000000';
+    ctx.fillText('Start', rect.x + rect.width / 4, rect.y + 64);
+  }
+
+// c.fillStyle = "pink";
+// c.fillRect(0, 0, 100, 100);
+// c.fillRect(0, 0, 100, 100);
+// c.fillRect(0, 0, 100, 100);
+
+// c.font = "50px Faster One";
+// c.fillText("hello World",30, 50);
+
+// TEXT FUNCTIONS
+
+var x = w/2;
+var tw;
+
+function updateFullScreenText() {
+    const fontSize = document.getElementById('fontSize').value;
+    const inputBox = document.getElementById('inputBox').value;
+    const fontColor = document.getElementById('fontColor').value;
+    const color = document.getElementById('shadColor').value;
+    const xsh = document.getElementsByClassName('x')[0].value;
+    const ysh = document.getElementsByClassName('y')[0].value;
+    const blur = document.getElementById('fontBlur').value;
+    const opacity = document.getElementById('shadOpac').value;
+    let tmp = opacity/100;
+    const strColor = document.getElementById('strColor').value;
+    const strWidth = document.getElementById('strWidth').value;
+
+    ctx.clearRect(0, 0, w, h);
+
+    ctx.shadowColor = `${color}`;
+    ctx.shadowOffsetX = xsh;
+    ctx.shadowOffsetY = ysh;
+    ctx.shadowBlur = blur;
+    ctx.globalAlpha = tmp;
+    ctx.font = `${fontSize}px` + " " + `${fontX}`;
+    ctx.fillStyle = `${fontColor}`;
+    ctx.textAlign = "center";
+    ctx.fillText(`${inputBox}`, x, h/2);
+    tw = ctx.measureText(`${inputBox}`).width;
+    if(strWidth > 0){
+        ctx.strokeStyle = `${strColor}`;
+        ctx.lineWidth = strWidth;
+        ctx.strokeText(`${inputBox}`, x, h/2);
+    } else if(strWidth <= 0){
+        ctx.strokeText("", x, h/2);
+    }
+}
+
+function updateText() {
+        const fontSize = document.getElementById('fontSize').value;
+        const inputBox = document.getElementById('inputBox').value;
+        const fontColor = document.getElementById('fontColor').value;
+        const color = document.getElementById('shadColor').value;
+        const xsh = document.getElementsByClassName('x')[0].value;
+        const ysh = document.getElementsByClassName('y')[0].value;
+        const blur = document.getElementById('fontBlur').value;
+        const opacity = document.getElementById('shadOpac').value;
+        let tmp = opacity/100;
+        const strColor = document.getElementById('strColor').value;
+        const strWidth = document.getElementById('strWidth').value;
+
+        c.clearRect(0, 0, w, h);
+
+        c.shadowColor = `${color}`;
+        c.shadowOffsetX = xsh;
+        c.shadowOffsetY = ysh;
+        c.shadowBlur = blur;
+        c.globalAlpha = tmp;
+        c.font = `${fontSize}px` + " " + `${fontX}`;
+        c.fillStyle = `${fontColor}`;
+        c.textAlign = "center";
+        c.fillText(`${inputBox}`, x, h/2);
+        tw = c.measureText(`${inputBox}`).width;
+        if(strWidth > 0){
+            c.strokeStyle = `${strColor}`;
+            c.lineWidth = strWidth;
+            c.strokeText(`${inputBox}`, x, h/2);
+        } else if(strWidth <= 0){
+            c.strokeText("", x, h/2);
+        }
+}
+
+var fontX;
+
+function setFontStyle(fontFamily, element) {
+    // const output = document.getElementById('outputT');
+    const fontSize = document.getElementById('fontSize').value;
+    const inputBox = document.getElementById('inputBox').value;
+    const fontColor = document.getElementById('fontColor').value;
+    // output.style.fontFamily = fontFamily;
+
+    fontX = fontFamily;
+    updateText();
+
+    const fontOptions = document.querySelectorAll('.fontOption');
+    fontOptions.forEach(option => option.classList.remove('selected'));
+
+    element.classList.add('selected');
+}
+
+// function setShadow(){
+//         // var output = document.getElementById("outputT");
+
+//         const fontSize = document.getElementById('fontSize').value;
+//         const inputBox = document.getElementById('inputBox').value;
+//         const fontColor = document.getElementById('fontColor').value;
+        
+//         const color = document.getElementById('shadColor').value;
+//         const xsh = document.getElementsByClassName('x')[0].value;
+//         const ysh = document.getElementsByClassName('y')[0].value;
+//         const blur = document.getElementById('fontBlur').value;
+//         const opacity = document.getElementById('shadOpac').value;
+//         let tmp = opacity/100;
+
+
+//         // output.style.textShadow = `${xsh}px ${ysh}px ${blur}px ${color}`;
+//         // output.style.opacity = tmp;
+
+//         // console.log("shadow color: " + color);
+//         // console.log("x SHADOW:" + xsh);
+//         // console.log("Y SHADOW: " + ysh);
+//         // console.log("BLUR:" + blur);
+//         // console.log("RUNNING SETSHADOW");
+
+// }
+
+
+// function setOutline(){
+
+//         const fontSize = document.getElementById('fontSize').value;
+//         const inputBox = document.getElementById('inputBox').value;
+//         const fontColor = document.getElementById('fontColor').value;
+        
+//         const color = document.getElementById('shadColor').value;
+//         const xsh = document.getElementsByClassName('x')[0].value;
+//         const ysh = document.getElementsByClassName('y')[0].value;
+//         const blur = document.getElementById('fontBlur').value;
+//         const opacity = document.getElementById('shadOpac').value;
+//         let tmp = opacity/100;
+
+//         const strColor = document.getElementById('strColor').value;
+//         const strWidth = document.getElementById('strWidth').value;
+
+        
+//         // var output = document.getElementById("outputT");
+
+//         // const strColor = document.getElementById('strColor').value;
+//         // const strWidth = document.getElementById('strWidth').value;
+
+//         // output.style.webkitTextStrokeColor = strColor;
+//         // output.style.webkitTextStrokeWidth = `${strWidth}px`;
+// }
+
+
+// Style Button Click
+    document.addEventListener("DOMContentLoaded", () => {
+        let shadowBtn = document.getElementById("shadowBtn");
+        let outlineBtn = document.getElementById("outlineBtn");
+
+        let shadowContent = document.getElementById("shadowContent");
+        let outlineContent = document.getElementById("outlineContent");
+
+        let focus = "";
+
+        shadowBtn.onclick = () => {
+            handleBtnClick(shadowBtn, shadowContent);
+        }
+
+        outlineBtn.onclick = () => {
+            handleBtnClick(outlineBtn, outlineContent);
+        }
+
+
+        function handleBtnClick(button, content) {
+            resetBtnColor();
+            hideAllContent();
+            // if (focus === button.id) {
+            //     focus = "";
+            //     return;
+            // }
+            // focus = button.id;
+            button.style.backgroundColor = "#FC5A94";
+            button.style.color = "white";
+            content.hidden = false;
+        }
+
+        function hideAllContent() {
+            shadowContent.hidden = true;
+            outlineContent.hidden = true;
+        }
+
+        function resetBtnColor() {
+            shadowBtn.style.backgroundColor = "white";
+            shadowBtn.style.color = "black";
+            outlineBtn.style.color = "black";
+            shadowBtn.style.border = "1px solid #FCC5D9"
+            outlineBtn.style.backgroundColor = "white";
+        }
+
+    });
+
+
+
+    // Animation button click
+    document.addEventListener("DOMContentLoaded", ()=>{
+        let aniBtn = document.getElementById("aniBtn");
+        let effBtn = document.getElementById("effBtn");
+        let aniCon = document.getElementById("aniContent");
+        let effCon = document.getElementById("effContent");
+
+        aniBtn.onclick = ()=>{
+            handleBtnClick(aniBtn, aniCon);
+        }
+
+        effBtn.onclick = ()=>{
+            handleBtnClick(effBtn, effCon);
+        }
+
+        function handleBtnClick(button, content){
+            hideAllContent();
+            resetBtnColor();
+
+            button.style.backgroundColor = "#FC5A94";
+            button.style.color = "white";
+            content.hidden = false;
+
+        }
+
+        function hideAllContent(){
+            aniCon.hidden = true;
+            effCon.hidden = true; 
+        }
+
+        function resetBtnColor(){
+            aniBtn.style.color = "black";
+            aniBtn.style.backgroundColor = "white";
+            effBtn.style.color = "black";
+            effBtn.style.backgroundColor = "white";
+            aniBtn.style.border = "1px solid #FCC5D9"
+        }
+
+        // let op = document.getElementsByClassName("op00")[2];
+        // op.addEventListener("click", ()=>{
+        //     setAnimation("blink");
+        //     op.style.color = "white";
+        //     op.style.backgroundColor = "#FC5A94";
+
+        // })
+    });
+
+    var startAni = true;
+    var myLoop;
+    function animateLoop(){
+        myLoop = requestAnimationFrame(animateLoop);
+        updateText();
+        x -= 1;
+
+        if(x + tw < 0){
+            x = w + (tw/2);
+        }
+            
+    }
+
+    function stopLoop(){
+        cancelAnimationFrame(myLoop);
+    }
+
+    var blinked = true;
+    var blinking;
+    function animateBlink(){
+        blinking = setInterval(()=>{
+            c.clearRect(0, 0, w, h);
+            if(blinked){
+                updateText();
+            }
+    
+        blinked = !blinked;
+        }, 500);    // adjust speed in ms
+        
+    }
+
+    function stopBlink(){
+        clearInterval(blinking);
+    }
+
+
+
+    var charWidth;
+
+    function updateTextSlide(char, slideX, slideY) {
+    
+            const fontSize = document.getElementById('fontSize').value;
+            const fontColor = document.getElementById('fontColor').value;
+            const color = document.getElementById('shadColor').value;
+            const xsh = document.getElementsByClassName('x')[0].value;
+            const ysh = document.getElementsByClassName('y')[0].value;
+            const blur = document.getElementById('fontBlur').value;
+            const opacity = document.getElementById('shadOpac').value;
+            let tmp = opacity/100;
+            const strColor = document.getElementById('strColor').value;
+            const strWidth = document.getElementById('strWidth').value;
+
+            c.shadowColor = `${color}`;
+            c.shadowOffsetX = xsh;
+            c.shadowOffsetY = ysh;
+            c.shadowBlur = blur;
+            c.globalAlpha = tmp;
+            c.font = `${fontSize}px` + " " + `${fontX}`;
+            c.fillStyle = `${fontColor}`;
+            c.textAlign = "center";
+            c.fillText(`${char}`, slideX, slideY);
+            charWidth = c.measureText(`${char}`).width;
+    
+            if(strWidth > 0){
+                c.strokeStyle = `${strColor}`;
+                c.lineWidth = strWidth;
+                c.strokeText(`${char}`, slideX, slideY);
+            } else if(strWidth <= 0){
+                c.strokeText("", slideX, slideY);
+            }
+    }
+    
+    var currChar = 0;
+    var slideX = w;
+    var charArray = [];
+    var boolArray = [];
+  
+    var startX;
+    var startX0;
+    var addX0 = 0;
+    var alignCoordinates = [];
+
+    function getAlignCoordinates(){
+        startX = (w-tw)/2;
+        startX0 = (w-tw)/2;
+        alignCoordinates.push(startX0);
+    }
+
+    function preSlide(){
+        
+        var string = document.getElementById('inputBox').value;
+        charArray = string.split('');
+        for (let i = 0; i<charArray.length; i++){
+            boolArray.push(false);
+        }
+
+        for(let i = 0; i<charArray.length; i++){
+            updateTextSlide(charArray[i], w+10, h/2);
+            startX0 += charWidth;
+            alignCoordinates.push(startX0);
+        }
+
+        // for(let i = 0; i<alignCoordinates.length; i++){
+        //     console.log("<br>" + i + ": " + alignCoordinates[i]);
+        // }    
+    }
+
+    var mySlide;
+
+    function animateSlide(){
+        mySlide = requestAnimationFrame(animateSlide);
+        c.clearRect(0, 0, w, h);
+
+        if(currChar < charArray.length){
+            if(slideX > startX){
+                slideX -= 1;
+                updateTextSlide(charArray[currChar], slideX, h/2);
+            }
+            
+            if(slideX <= startX){
+                boolArray[currChar] = true;
+                currChar += 1;
+                slideX = w;
+                startX += charWidth;
+            }
+        } 
+    
+        for(let i = 0; i<boolArray.length; i++){
+            if(boolArray[i]){
+                updateTextSlide(charArray[i], alignCoordinates[i], h/2);
+            }
+        }     
+    }
+
+    function stopSlide(){
+        cancelAnimationFrame(mySlide);
+        currChar = 0;
+        boolArray = [];
+        charArray = [];
+        slideX = w;
+    }
+    
+
+    function resetAnimation(){
+        stopLoop();
+        stopBlink();
+        stopSlide();
+        x = w/2;
+        updateText();
+    }
+
+    function updateTextFade(opac) {
+        const fontSize = document.getElementById('fontSize').value;
+        const inputBox = document.getElementById('inputBox').value;
+        const fontColor = document.getElementById('fontColor').value;
+        
+        const color = document.getElementById('shadColor').value;
+        const xsh = document.getElementsByClassName('x')[0].value;
+        const ysh = document.getElementsByClassName('y')[0].value;
+        const blur = document.getElementById('fontBlur').value;
+        
+
+        const strColor = document.getElementById('strColor').value;
+        const strWidth = document.getElementById('strWidth').value;
+
+        // c.clearRect(0, 0, w, h);
+
+        c.shadowColor = `${color}`;
+        c.shadowOffsetX = xsh;
+        c.shadowOffsetY = ysh;
+        c.shadowBlur = blur;
+        c.globalAlpha = opac;
+        c.font = `${fontSize}px` + " " + `${fontX}`;
+        c.fillStyle = `${fontColor}`;
+        c.textAlign = "center";
+        c.fillText(`${inputBox}`, x, h/2);
+        tw = c.measureText(`${inputBox}`).width;
+
+        if(strWidth > 0){
+            c.strokeStyle = `${strColor}`;
+            c.lineWidth = strWidth;
+            c.strokeText(`${inputBox}`, x, h/2);
+        } else if(strWidth <= 0){
+            c.strokeText("", x, h/2);
+        }
+}
+
+    var startFade;
+    var setOpacity;
+    var currentOpacity;
+    var fadeIn = false;
+    var fadeOut = false;
+    function preFade(){
+        const opacity = document.getElementById('shadOpac').value;
+        setOpacity = opacity/100;
+        currentOpacity = setOpacity;
+    }
+    function animateFade(){
+        startFade = requestAnimationFrame(animateFade);
+        c.clearRect(0, 0, w, h);
+        if(currentOpacity == setOpacity){
+            fadeOut = true;
+        }
+        if(currentOpacity <= 0){
+            fadeIn = true;
+        }
+        if(fadeOut){
+            currentOpacity -= 0.1;
+            updateTextFade(currentOpacity);
+        }
+        if(fadeIn){
+            currentOpacity = currentOpacity + 0.1;
+            updateTextFade(currentOpacity);
+        }
+        
+    }
+
+    let noAnimation = document.getElementsByClassName('op00')[0];
+    let loopText = document.getElementsByClassName('op00')[1];
+    let blinkText = document.getElementsByClassName('op00')[2];
+    let slideText = document.getElementsByClassName('op00')[3];
+    let fadeText = document.getElementsByClassName('op00')[4];
+
+    
+    noAnimation.addEventListener('click', resetAnimation);
+    loopText.addEventListener('click', ()=>{
+        resetAnimation();
+        animateLoop();
+    });
+    blinkText.addEventListener('click', ()=>{
+        resetAnimation();
+        animateBlink();
+    });
+
+    slideText.addEventListener('click', ()=>{
+        resetAnimation();
+
+        getAlignCoordinates();
+        preSlide();
+        animateSlide();
+    });
+    fadeText.addEventListener('click', ()=>{
+        resetAnimation();
+        preFade();
+        animateFade();
+    })
+
+
+
+
+// EFFECTS FUNCTIONS
+
+// COLORFUL EFFECT
+
+    let circles = [];
+    let colors = [[255, 192, 203, 1], [0, 128, 0, 1], [255, 0, 0, 1], [128, 0, 128, 1], [184, 255, 128, 1]];
+
+    function init(){
+        createObject();
+        animationLoop();
+    }
+
+    // function resizeReset(){
+    //     createObject();
+    // }
+
+    function createObject(){
+        for(let i=0; i<50; i++){
+            circles.push(new Circle(i));
+        }
+    }
+
+    var myColorLoop;
+
+    function animationLoop(){
+        myColorLoop = requestAnimationFrame(animationLoop);
+        c.clearRect(0, 0, w, h);
+        c.globalCompositeOperation = "lighter";
+        
+        updateCircles();
+        drawScene();
+        updateTextSnow();
+    }
+
+
+    function updateCircles() {
+        circles.forEach(circle => {
+            circle.update();
+        });
+    }
+
+    function drawScene(){
+        circles.forEach((circle)=>{
+            circle.draw();
+        });
+    }
+
+    class Circle{
+        constructor(i){
+            this.x = Math.random()*w;
+            this.y = Math.random()*h;
+            this.radius = 5;
+            this.color = colors[i % colors.length];
+            this.alpha = 1;
+            this.velX = (Math.random() * 2 - 1);
+            this.velY = (Math.random() * 2 - 1);
+        }
+        update() {
+            this.x += this.velX;
+            this.y += this.velY;
+
+            // Reverse direction when hitting the edges
+            if (this.x - this.radius < 0 || this.x + this.radius > w) {
+                this.velX *= -1;
+            }
+            if (this.y - this.radius < 0 || this.y + this.radius > h) {
+                this.velY *= -1;
+            }
+        }
+        draw(){
+            c.beginPath();
+            c.arc(this.x, this.y, this.radius, 0, Math.PI *2);
+            c.fillStyle = `rgba(${this.color[0]}, ${this.color[1]}, ${this.color[2]}, ${this.color[3]})`;
+            c.closePath();
+            c.fill();
+        }
+    }
+
+    function stopColor(){
+        cancelAnimationFrame(myColorLoop);
+        circles = [];
+    }
+
+    
+
+// NEWFIRE EFFECT
+
+
+    // Define the LED dimensions
+    var ledSize = 10;
+    var ledGap = 10;
+    var LEDeffect;
+
+    // Define the LED colors
+    var onColor = "#ffff00";
+    var offColor = "#333333";
+
+    // Define the animation speed
+    var animationSpeed = 500; // milliseconds per frame
+
+    // Animation loop
+    var myTimeout;
+    function animateLED() {
+      myTimeout = setTimeout(function() {
+        LEDeffect = requestAnimationFrame(animateLED);
+
+        // Clear the canvas
+        c.clearRect(0, 0, w, h);
+
+        // Draw the LEDs
+        
+        drawLEDs();
+        updateTextSnow();
+        
+      }, animationSpeed);
+      
+    }
+
+    
+
+    function stopLED(){
+        clearTimeout(myTimeout);
+    }
+
+    // Draw the LEDs
+    function drawLEDs() {
+      for (var x = 0; x < w; x += ledSize + ledGap) {
+        for (var y = 0; y < h; y += ledSize + ledGap) {
+          // Randomly turn the LED on or off
+          var isOn = Math.random() < 0.5;
+
+          // Draw the LED
+          c.beginPath();
+          c.arc(x + ledSize / 2, y + ledSize / 2, ledSize / 2, 0, 2 * Math.PI);
+          c.fillStyle = isOn ? onColor : offColor;
+          c.fill();
+        }
+      }
+    }
+    
+
+
+// SNOW EFFECT
+    // const c = document.getElementById('snowCanvas');
+    // const ctx = c.getContext('2d');
+    function updateTextSnow() {
+            const fontSize = document.getElementById('fontSize').value;
+            const inputBox = document.getElementById('inputBox').value;
+            const fontColor = document.getElementById('fontColor').value;
+            
+            const color = document.getElementById('shadColor').value;
+            const xsh = document.getElementsByClassName('x')[0].value;
+            const ysh = document.getElementsByClassName('y')[0].value;
+            const blur = document.getElementById('fontBlur').value;
+            const opacity = document.getElementById('shadOpac').value;
+            let tmp = opacity/100;
+    
+            const strColor = document.getElementById('strColor').value;
+            const strWidth = document.getElementById('strWidth').value;
+    
+            // c.clearRect(0, 0, w, h);
+
+            c.shadowColor = `${color}`;
+            c.shadowOffsetX = xsh;
+            c.shadowOffsetY = ysh;
+            c.shadowBlur = blur;
+            c.globalAlpha = tmp;
+            c.font = `${fontSize}px` + " " + `${fontX}`;
+            c.fillStyle = `${fontColor}`;
+            c.textAlign = "center";
+            c.fillText(`${inputBox}`, x, h/2);
+            tw = c.measureText(`${inputBox}`).width;
+    
+            if(strWidth > 0){
+                c.strokeStyle = `${strColor}`;
+                c.lineWidth = strWidth;
+                c.strokeText(`${inputBox}`, x, h/2);
+            } else if(strWidth <= 0){
+                c.strokeText("", x, h/2);
+            }
+    }
+
+
+
+
+    var totalSnow = 100;
+    var listSnow = [];
+
+    const Snow = function () {
+        this.x = Math.random()*w;
+        this.y = Math.random()*h;
+        this.radius = Math.random()*2;
+        this.speedX = random(-1, 1);
+        this.speedY = random(-1, 1);
+
+        this.draw = function() {
+            c.beginPath();
+            c.arc(this.x, this.y, this.radius, Math.PI*2, false);
+            c.fillStyle = 'white';
+            c.fill();
+            c.closePath();
+
+            // update
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.y > h) {
+                this.y = -10;
+                this.x = Math.random() * w * 1.5;
+            }
+        }
+    }
+
+    const random = (min, max) => {
+        return min + Math.random() * (max - min + 1);
+    }
+
+    function initSnow(){
+        // resizeCanvas();
+        // window.addEventListener('resize', resizeCanvas);
+        createSnow();
+    }
+
+    // const resizeCanvas = () => {
+    //     c.width = window.innerWidth;
+    //     c.height = window.innerHeight;
+    // }
+
+    function createSnow(){
+        for(let i = 0; i < totalSnow; i++ ) {
+            listSnow.push(new Snow);
+        }
+    }
+
+    var mySnow;
+
+    function loop(){
+        mySnow = requestAnimationFrame(loop);
+        c.clearRect(0, 0, w, h);
+        
+        c.fillStyle = 'black';
+        c.fillRect(0, 0, w, h);
+        updateTextSnow();
+        
+        
+        
+        listSnow.forEach((snow) => {
+            snow.draw();
+        });
+        
+        
+    }
+
+    function stopSnow(){
+        cancelAnimationFrame(mySnow);
+        listSnow = [];
+    }
+
+// RAIN EFFECT
+
+    let raindrops = [];
+    const numRaindrops = 200;
+
+    class Raindrop {
+    constructor() {
+        this.x = Math.random() * w;
+        this.y = Math.random() * -h;
+        this.length = Math.random() * 20 + 10;
+        this.width = Math.random() * 2;
+        this.speed = Math.random() ;
+    }
+
+    draw() {
+        c.beginPath();
+        c.moveTo(this.x, this.y);
+        c.lineTo(this.x, this.y + this.length);
+        c.lineWidth = this.width;
+        c.strokeStyle = 'white';
+        c.stroke();
+    }
+
+    update() {
+        this.y += this.speed;
+
+        if (this.y > h) {
+        this.x = Math.random() * w;
+        this.y = Math.random() * -h;
+        }
+    }
+    }
+
+    function initRaindrops() {
+    for (let i = 0; i < numRaindrops; i++) {
+        raindrops.push(new Raindrop());
+    }
+    }
+
+    var myRain;
+    function animateRain() {
+        myRain = requestAnimationFrame(animateRain);
+        c.clearRect(0, 0, w, h);
+        c.fillStyle = "blue";
+        c.fillRect(0, 0, w, h);
+        updateTextSnow();
+
+        for (let i = 0; i < raindrops.length; i++) {
+            raindrops[i].draw();
+            raindrops[i].update();
+        }
+    }
+
+    
+    function stopRain(){
+        cancelAnimationFrame(myRain);
+        raindrops = [];
+    }
+
+    function resetEffects(){
+        stopColor();
+        stopLED();
+        stopSnow();
+        stopRain();
+        c.clearRect(0, 0, w, h);
+    }
+
+// EFFECTS BUTTONS
+let colorful = document.getElementById('colorful');
+let newfire = document.getElementById("newfire");
+let snow = document.getElementById('snow');
+let rain = document.getElementById('rain');
+
+    colorful.addEventListener('click', ()=>{
+        resetEffects();
+        init();
+    });
+
+    newfire.addEventListener('click', ()=>{
+        resetEffects();
+        animateLED();
+    });
+
+    snow.addEventListener('click', () => {
+        resetEffects();
+        initSnow();
+        loop();
+    });
+
+    rain.addEventListener('click', ()=>{
+        resetEffects();
+        initRaindrops();
+        animateRain();
+    });
+
+
+// NO EFFECTS
+    let noEffects = document.getElementById('noEffects');
+    noEffects.addEventListener('click', ()=>{
+        // window.cancelAnimationFrame(LEDeffect);
+        stopLED();
+        stopColor();
+        stopSnow();
+        stopRain();
+        c.clearRect(0, 0, w, h);
+        updateText();
+    });
+
+   
+
+//Button click
+
+    function showContent(contentId) {
+        const sections = document.querySelectorAll('.contentSection');
+        sections.forEach(section => {
+            if (section.id === contentId) {
+                section.style.display = 'flex';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+    }
+
+
+
+</script>
+
+
+
+
+
